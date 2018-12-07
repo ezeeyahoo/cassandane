@@ -1220,6 +1220,12 @@ sub test_replication_mailbox_new_enough
     $self->{instance}->install_old_mailbox($user, 10, $dest_dir);
     $self->run_replication(mailbox => $mailbox10);
 
+#    my $mailbox12 = "user.$user.version12";
+#    $admintalk->create($mailbox12);
+#    $status = $admintalk->status($mailbox10, "(mailboxid)");
+#    $mbid = $status->{mailboxid}[0];
+#    $dest_dir = $self->{instance}->folder_to_directory($mbid);
+
     # successfully replicate a mailbox new enough to contain guids
     $dest_dir = $self->{instance}->folder_to_directory($id12);
     $self->{instance}->install_old_mailbox($user, 12, $dest_dir);
